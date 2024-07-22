@@ -1,0 +1,13 @@
+{
+  "name": "77pace",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://*.timehub.7pace.com/"],
+      "all_frames": true,
+      "js": ["frame.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
