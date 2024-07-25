@@ -1,0 +1,37 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, Verdana;
+  width: 350px;
+  background-color: rgb(var(--palette-neutral-2,248,248,248));
+}
+
+p {
+  font-size: large;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+b {
+  margin-top: 10px;
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+}
+
+.cards div {
+  padding: 20px 25px;
+  background-color: rgb(var(--palette-neutral-0,255,255,255));
+}
+
+.cards div span {
+  display: flex;
+  font-size: medium;
+  justify-content: space-between;
+  align-self: end;
+}
+
+.cards div span * {
+  margin: 0;
+}

@@ -1,5 +1,6 @@
 {
   "name": "77pace",
+  "author": "Valentin Sene",
   "version": "1.0",
   "manifest_version": 3,
   "content_scripts": [
@@ -9,5 +10,9 @@
       "js": ["frame.js"],
       "run_at": "document_end"
     }
-  ]
+  ],
+  "action":{
+        "default_popup": "index.html",
+        "default_title": "77pace"
+    }
 }
