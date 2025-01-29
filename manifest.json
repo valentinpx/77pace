@@ -3,6 +3,7 @@
   "author": "Valentin Sene",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["https://*.timehub.7pace.com/"],
@@ -11,8 +12,8 @@
       "run_at": "document_end"
     }
   ],
-  "action":{
-        "default_popup": "index.html",
-        "default_title": "77pace"
-    }
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "77pace"
+  }
 }

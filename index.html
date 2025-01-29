@@ -4,30 +4,20 @@
       <title>77pace time recap</title>
       <meta charset="utf-8">
       <link rel="stylesheet" href="style.css">
+      <script src="alpine.min.js" defer></script>
+      <script src="popup.js"></script>
   </head>
   <body>
     <h1>77pace time recap</h1>
-    <div class="cards">
-      <div>
-        <span>
-          <h3>June 2014 - September 2024</h3>
-        </span>
-        <p><b>102,75j</b> sur 118</p>
-      </div>
-      <div>
-        <span>
-          <h3>July 2024</h3>
-          <p>210:08:31</p>
-        </span>
-        <p><b>12,75j</b> sur 12</p>
-      </div>
-      <div>
-        <span>
-          <h3>June 2024</h3>
-          <p>120:35:02</p>
-        </span>
-        <p><b>7,97j</b> sur 8</p>
-      </div>
+    <div id="cards" x-data="timeData">
+      <template x-for="m in months" :key="m.name">
+        <div>
+          <h2 x-text="m.name"></h2>
+          <span>
+            <b x-text="m.time"></b>j sur <span x-text="m.days"></span>
+          </span>
+        </div>
+      </template>
     </div>
   </body>
 </html>

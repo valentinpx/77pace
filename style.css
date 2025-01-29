@@ -4,6 +4,10 @@ body {
   background-color: rgb(var(--palette-neutral-2,248,248,248));
 }
 
+h2 {
+  margin-top: 0;
+}
+
 p {
   font-size: large;
   margin-top: 10px;
@@ -14,24 +18,21 @@ b {
   margin-top: 10px;
 }
 
-.cards {
+#cards {
   width: 100%;
   display: grid;
   gap: 10px;
 }
 
-.cards div {
+#cards div {
   padding: 20px 25px;
   background-color: rgb(var(--palette-neutral-0,255,255,255));
 }
 
-.cards div span {
-  display: flex;
+#cards div span {
   font-size: medium;
-  justify-content: space-between;
-  align-self: end;
 }
 
-.cards div span * {
+#cards div span * {
   margin: 0;
 }
