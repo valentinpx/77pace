@@ -9,6 +9,12 @@
   </head>
   <body>
     <h1>77pace time recap</h1>
+    <div x-data="totalData">
+      <p x-text="total.period"></p>
+      <span>
+        <b x-text="total.time"></b>j sur <span x-text="total.days"></span>
+      </span>
+    </div>
     <div id="cards" x-data="timeData">
       <template x-for="m in months" :key="m.name">
         <div>

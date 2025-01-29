@@ -20,29 +20,39 @@ function formatDate(month) {
   return `${y}-${months[m]}`
 }
 
-function storeMonth(month, time, days) {
+function computeTotal(months) {
+  const keys = Object.keys(months).sort()
+
+  chrome.storage.local.set({ total: {
+      period: `De ${keys[0]} à ${keys[keys.length - 1]}`,
+      time: keys.reduce((acc, key) => acc + months[key].time, 0).toFixed(PRECISION),
+      days: keys.reduce((acc, key) => acc + months[key].days, 0)
+    }
+  })
+}
+
+async function storeMonth(month, time, days) {
   if (isNaN(time)) return
 
-  chrome.storage.local.get(['months'], function(result) {
-    let months = result.months || {}
+  chrome.storage.local.get(['months']).then(data => {
+    let months = data.months || {}
+
     months[formatDate(month)] = { name: month, time, days }
-    
-    chrome.storage.local.set({ months: months })
+    chrome.storage.local.set({ months: months }).then(() => computeTotal(months))
   })
 }
 
 function computeDays() {
   const month = document.querySelector(".month-total.day-hours")
 
-  console.log("77pace days loading")
   if (month) {
+    const monthJ = timeToJ(month.innerText)
     let days = {
       hours: 0,
       min: 0,
       sec: 0,
       length: 0
     }
-    let monthJ = timeToJ(month.innerText)
 
     for (const day of document.querySelectorAll(".selectable-day:not(.not-current-month) .day-hours")) {
         let time = day.innerText
@@ -57,7 +67,6 @@ function computeDays() {
     }
     if (isNaN(monthJ)) return
     month.innerHTML += `<p>${monthJ}j/${days.length}<p>`
-    console.log("77pace days loaded")
 
     storeMonth(
       document.querySelector(".month-selector .ttt-selector-area").innerText,
@@ -69,7 +78,9 @@ function computeDays() {
   }
 }
 
+console.log("77pace days loading")
 for (const btn of [...document.querySelectorAll(".ttt-month-switcher"), document.querySelector(".ttt-current-period-btn")]) {
   btn.addEventListener("click", computeDays)
 }
 computeDays()
+console.log("77pace days loaded")
