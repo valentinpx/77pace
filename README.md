@@ -10,7 +10,7 @@ The days of each month are stored in the browser, you can view a recap in the po
 ![extension_popup](https://raw.githubusercontent.com/valentinpx/77pace/refs/heads/main/img/extension_popup.png)
 
 #### Installation
-Toggle the developer mode in chrome://extensions and load the extension as an unpacked extension.
+Toggle the developer mode in [chrome://extensions](chrome://extensions). and load the extension as an unpacked extension.
 ![extension_install](https://raw.githubusercontent.com/valentinpx/77pace/refs/heads/main/img/extension_install.png)
 
 ### month_time.py script
