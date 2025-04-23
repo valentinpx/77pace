@@ -17,26 +17,18 @@ Toggle the developer mode in [chrome://extensions](chrome://extensions). and loa
 #### Usage
 This script is used to fetch the total time spent in a month or a year. It uses the 7pace Timetracker API to get the data.
 ```
-Time log report for 2025-01
-Total time logged: 425730 seconds
-Total time logged: 118.26 hours
-Total time logged: 16.89 days (assuming 7 hours per day)
-----------------------------------------
-Time log report for 2025-02
-Total time logged: 424642 seconds
-Total time logged: 117.96 hours
-Total time logged: 16.85 days (assuming 7 hours per day)
-----------------------------------------
-Time log report for 2025-03
-Total time logged: 262589 seconds
-Total time logged: 72.94 hours
-Total time logged: 10.42 days (assuming 7 hours per day)
+Time log report for 2023-01
+Time logged for project X: 418433s, 116.23h
+Time logged for project Y: 7297s, 2.03h
+Total time logged across all projects: 425730 seconds
+Total time logged across all projects: 118.26 hours
+Total time logged across all projects: 16.89 days (assuming 7 hours per day)
 ----------------------------------------
 ```
 
-First, specify the following constants in the script:
-```python
-BASE_URL = "https://<YOUR_DOMAIN>/api/odata/v3.2/workLogsOnly"
+First, specify the following variables in the .env:
+```
+BASE_URL = "https://<YOUR_DOMAIN>"
 API_KEY = "<YOUR_API_KEY>"
 HOURS_IN_DAY = 7
 ```
