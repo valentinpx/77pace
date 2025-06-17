@@ -37,3 +37,18 @@ Run the script with the following command:
 ```bash
 uv run month_time.py <year> <month (optional)>
 ```
+
+### work_items.py script
+#### Usage
+This script analyzes the logged time by person and category from a list of 7pace work items using the 7pace Timetracker API.
+
+First, specify the following variables in the .env:
+```
+BASE_URL = "https://<YOUR_DOMAIN>"
+API_KEY = "<YOUR_API_KEY>"
+```
+
+Run the script with the following command:
+```bash
+uv run work_items.py <work_item_id1> <work_item_id2> ...
+```
