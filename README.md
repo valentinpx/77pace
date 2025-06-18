@@ -33,6 +33,7 @@ API_KEY = "<YOUR_API_KEY>"
 HOURS_IN_DAY = 7
 USER_EMAIL=<your.email@domain.com>
 ```
+Leave `USER_EMAIL` empty if you want to fetch the time for all users.
 
 Run the script with the following command:
 ```bash
