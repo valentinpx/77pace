@@ -57,6 +57,7 @@ def fetch_data(year, month, api_key, hours_in_day, base_domain):
         f"{base_url}?"
         f"$apply=filter(Timestamp ge {start_date} and Timestamp le {end_date})/"
         f"groupby((WorkItem/System_TeamProject),aggregate(PeriodLength with sum as TotalTime))"
+        f"&worklogsFilter=User/Email eq '{os.getenv('USER_EMAIL')}'"
     )
     headers = {
         'Authorization': f'Bearer {api_key}',
@@ -64,7 +65,7 @@ def fetch_data(year, month, api_key, hours_in_day, base_domain):
     }
 
     response = requests.get(url, headers=headers)
-
+    print(url)
     try:
         data = response.json()
         print(f"Time log report for {year}-{month:02d}")

@@ -31,6 +31,7 @@ First, specify the following variables in the .env:
 BASE_URL = "https://<YOUR_DOMAIN>"
 API_KEY = "<YOUR_API_KEY>"
 HOURS_IN_DAY = 7
+USER_EMAIL=<your.email@domain.com>
 ```
 
 Run the script with the following command:
